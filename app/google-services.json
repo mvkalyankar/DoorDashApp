@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "818285761143",
+    "project_id": "doordashapp-2b31f",
+    "storage_bucket": "doordashapp-2b31f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818285761143:android:a41a452ef737db7b442c72",
+        "android_client_info": {
+          "package_name": "com.example.doordashapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818285761143-1binqfe59c8to2lc671iorumn1tpl2n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAui-WdjSKijqVu7DiQzMjpFHrm39d5W5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818285761143-1binqfe59c8to2lc671iorumn1tpl2n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
