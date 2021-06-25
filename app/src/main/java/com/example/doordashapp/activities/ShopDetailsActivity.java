@@ -270,6 +270,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
         dFeeTv = view.findViewById(R.id.dFeeTv);
         allTotalPriceTv = view.findViewById(R.id.totalTv);
         Button checkoutBtn = view.findViewById(R.id.checkoutBtn);
+        Button paymentBtn = view.findViewById(R.id.paymentBtn);
 
         //dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -348,9 +349,25 @@ public class ShopDetailsActivity extends AppCompatActivity {
                     Toast.makeText(ShopDetailsActivity.this, "No items in cart", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+
+
                 submitOrder();
             }
         });
+
+        //payment process
+        paymentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String cost = allTotalPriceTv.getText().toString().trim().replace("$", "");
+                Intent intent = new Intent(ShopDetailsActivity.this,PaymentActivity.class);
+                intent.putExtra("cost", cost);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     private void submitOrder() {
@@ -398,7 +415,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
                             ref.child(timestamp).child("Items").child(fId).setValue(hashMap1);
                         }
                         progressDialog.dismiss();
-                        Toast.makeText(ShopDetailsActivity.this, "Order placed successfully..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ShopDetailsActivity.this, "Review Order", Toast.LENGTH_SHORT).show();
 
                         //after placing order ,open order details pg
 //                        Intent intent = new Intent(ShopDetailsActivity.this, PaymentActivity.class);
@@ -418,7 +435,11 @@ public class ShopDetailsActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+
     }
+
 
     private void loadMyInfo() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");

@@ -34,6 +34,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import dev.shreyaspatil.easyupipayment.model.Payment;
 
@@ -41,6 +43,7 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
 
     private String orderTo, orderId;
     private String cost;
+    private Timer timer;
 
     // UI views
     private ImageButton backBtn, writeReviewBtn;
@@ -74,7 +77,7 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
         addressTv = findViewById(R.id.addressTv);
         itemsRv = findViewById(R.id.itemsRv);
         writeReviewBtn = findViewById(R.id.writeReviewBtn);
-        paymentBtn = findViewById(R.id.paymentBtn);
+
 
         Intent intent = getIntent();
         orderTo = intent.getStringExtra("orderTo");    // orderTo contains uid of the shop where we placed order
@@ -104,19 +107,10 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
             }
         });
 
-        paymentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                paymentDone();
-            }
-        });
+
     }
 
-    private void paymentDone() {
-        Intent intent = new Intent(OrderDetailsUsersActivity.this, PaymentActivity.class);
-        intent.putExtra("cost", cost);
-        startActivity(intent);
-    }
+
 
     private void loadOrderedItems() {
         // init list
