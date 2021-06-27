@@ -59,6 +59,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
     private String shopLatitude, shopLongitude, shopName, shopEmail, shopAddress, shopPhone;
     public String deliveryFee;
     private RatingBar ratingBar;
+    String selectMethod = "Cash On Delivery";
 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -270,7 +271,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
         dFeeTv = view.findViewById(R.id.dFeeTv);
         allTotalPriceTv = view.findViewById(R.id.totalTv);
         Button checkoutBtn = view.findViewById(R.id.checkoutBtn);
-        Button paymentBtn = view.findViewById(R.id.paymentBtn);
+
 
         //dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -350,23 +351,45 @@ public class ShopDetailsActivity extends AppCompatActivity {
                     return;
                 }
 
+                String [] method = {"Cash On Delivery","Credit Card"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(ShopDetailsActivity.this);
+                builder.setTitle("Select Payment Method");
+                builder.setSingleChoiceItems(method, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        selectMethod = method[which];
 
+                        Toast.makeText(ShopDetailsActivity.this,"Selected :"+selectMethod, Toast.LENGTH_SHORT).show();
 
-                submitOrder();
-            }
+                        if (which == 1) {
+                            Toast.makeText(ShopDetailsActivity.this, "Currently Online Payment Is Not Available..Try Another Method", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(ShopDetailsActivity.this,ShopDetailsActivity.class));
+                            finish();
+                        }
+
+                    }
+                });
+
+                builder.setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        submitOrder();
+                    }
+                });
+
+                builder.setNegativeButton("Cancel Payment", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Toast.makeText(ShopDetailsActivity.this,"Payment Cancelled", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+          }
         });
 
-        //payment process
-        paymentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String cost = allTotalPriceTv.getText().toString().trim().replace("$", "");
-                Intent intent = new Intent(ShopDetailsActivity.this,PaymentActivity.class);
-                intent.putExtra("cost", cost);
-                startActivity(intent);
-                finish();
-            }
-        });
+
 
     }
 
@@ -415,7 +438,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
                             ref.child(timestamp).child("Items").child(fId).setValue(hashMap1);
                         }
                         progressDialog.dismiss();
-                        Toast.makeText(ShopDetailsActivity.this, "Review Order", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ShopDetailsActivity.this, " Order Placed Successfully....", Toast.LENGTH_SHORT).show();
 
                         //after placing order ,open order details pg
 //                        Intent intent = new Intent(ShopDetailsActivity.this, PaymentActivity.class);

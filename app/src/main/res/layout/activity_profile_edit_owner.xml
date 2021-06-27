@@ -64,6 +64,7 @@
         android:drawableStart="@drawable/ic_person_gray"
         android:drawablePadding="5dp"
         android:hint="Full Name"
+        android:textColor="@color/colorBlack"
         android:inputType="textCapWords|textPersonName"
         android:padding="10dp" />
 
@@ -77,6 +78,7 @@
         android:drawableStart="@drawable/ic_store_gray"
         android:drawablePadding="5dp"
         android:hint="Shop Name"
+        android:textColor="@color/colorBlack"
         android:inputType="textCapWords|textPersonName"
         android:padding="10dp" />
 
@@ -90,6 +92,7 @@
         android:drawableStart="@drawable/ic_phone_gray"
         android:drawablePadding="5dp"
         android:hint="Phone"
+        android:textColor="@color/colorBlack"
         android:inputType="number"
         android:padding="10dp" />
 
@@ -103,6 +106,7 @@
         android:drawableStart="@drawable/ic_delivery_gray"
         android:drawablePadding="5dp"
         android:hint="Delivery Fee"
+        android:textColor="@color/colorBlack"
         android:inputType="number"
         android:padding="10dp" />
 
@@ -121,6 +125,7 @@
             android:layout_below="@+id/nameEt"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:textColor="@color/colorBlack"
             android:background="@drawable/shape_rect02"
             android:drawableStart="@drawable/ic_location_gray"
             android:drawablePadding="5dp"
@@ -139,6 +144,7 @@
             android:drawableStart="@drawable/ic_location_gray"
             android:drawablePadding="5dp"
             android:hint="State"
+            android:textColor="@color/colorBlack"
             android:inputType="textPostalAddress"
             android:padding="10dp" />
 
@@ -147,6 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nameEt"
+            android:textColor="@color/colorBlack"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/shape_rect02"
@@ -168,6 +175,7 @@
         android:drawableStart="@drawable/ic_location_gray"
         android:drawablePadding="5dp"
         android:hint="Address"
+        android:textColor="@color/colorBlack"
         android:inputType="textEmailAddress|textMultiLine"
         android:padding="10dp" />
 

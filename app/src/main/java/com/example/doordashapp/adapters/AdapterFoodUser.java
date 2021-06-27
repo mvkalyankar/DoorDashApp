@@ -155,7 +155,7 @@ public class AdapterFoodUser extends RecyclerView.Adapter<AdapterFoodUser.Holder
 
         cost = Double.parseDouble(price.replaceAll("$", ""));
         finalCost = Double.parseDouble(price.replaceAll("$", ""));
-        ;
+
         quantity = 1;
 
         //dialog
@@ -246,7 +246,7 @@ public class AdapterFoodUser extends RecyclerView.Adapter<AdapterFoodUser.Holder
                 .addData("Item_Quantity", quantity)
                 .doneDataAdding();
 
-        Toast.makeText(context, "Added to Cart......", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Saved to Cart......", Toast.LENGTH_SHORT).show();
 
         //update cart count
         ((ShopDetailsActivity) context).cartCount();

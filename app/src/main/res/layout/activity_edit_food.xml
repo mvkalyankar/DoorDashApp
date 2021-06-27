@@ -55,6 +55,7 @@
             android:drawableStart="@drawable/ic_title_gray"
             android:drawablePadding="5dp"
             android:hint="Title"
+            android:textColor="@color/colorBlack"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp" />
 
@@ -68,6 +69,7 @@
             android:drawableStart="@drawable/ic_title_gray"
             android:drawablePadding="5dp"
             android:hint="Description"
+            android:textColor="@color/colorBlack"
             android:inputType="textCapSentences"
             android:padding="10dp" />
 
@@ -80,7 +82,8 @@
             android:background="@drawable/shape_rect02"
             android:drawableStart="@drawable/ic_cart_gray"
             android:drawablePadding="5dp"
-            android:hint="Quantity e.g kg,g etc"
+            android:textColor="@color/colorBlack"
+            android:hint="Quantity "
             android:inputType="textCapSentences"
             android:padding="10dp" />
 
@@ -91,6 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/quantityEt"
             android:layout_margin="5dp"
+            android:textColor="@color/colorBlack"
             android:background="@drawable/shape_rect02"
             android:drawableStart="@drawable/ic_cart_gray"
             android:drawablePadding="5dp"
@@ -116,6 +120,7 @@
             android:drawableStart="@drawable/ic_cart_gray"
             android:drawablePadding="5dp"
             android:hint="Discount price"
+            android:textColor="@color/colorBlack"
             android:inputType="textCapSentences"
             android:padding="10dp" />
 
@@ -128,6 +133,7 @@
             android:background="@drawable/shape_rect02"
             android:drawableStart="@drawable/ic_cart_gray"
             android:drawablePadding="5dp"
+            android:textColor="@color/colorBlack"
             android:hint="Discount Note e.g 10% off"
             android:inputType="textCapSentences"
             android:padding="10dp" />

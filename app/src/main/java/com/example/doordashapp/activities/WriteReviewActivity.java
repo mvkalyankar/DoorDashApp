@@ -3,6 +3,7 @@ package com.example.doordashapp.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -164,6 +165,8 @@ public class WriteReviewActivity extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         // review added to DB
                         Toast.makeText(WriteReviewActivity.this, "Review published successfully...", Toast.LENGTH_SHORT).show();
+                        reviewEt.setText("");
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

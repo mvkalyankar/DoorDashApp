@@ -17,9 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/DoorDashApp.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FoodDonationActivity"></activity>
+        <activity android:name=".FoodDonationActivity" />
         <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".activities.PaymentActivity"></activity>
         <activity android:name=".activities.OrderDetailsOwnerActivity" />
         <activity android:name=".activities.ShopReviewsActivity" />
         <activity android:name=".activities.WriteReviewActivity" />

@@ -49,6 +49,7 @@
             android:layout_height="80dp"
             android:src="@drawable/ic_store_gray"
             app:c_border="true"
+
             app:c_border_color="@color/colorPrimary"
             app:c_border_width="3dp" />
 
@@ -56,6 +57,7 @@
             android:id="@+id/shopNameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="Shop Name" />
 
         <RatingBar
@@ -68,6 +70,7 @@
             android:id="@+id/ratingsTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:text="4.3 [100, 098, 577]"
             android:textSize="12sp" />
 

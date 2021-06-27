@@ -212,6 +212,7 @@
             android:layout_toStartOf="@id/filterOrderBtn"
             android:background="@drawable/shape_rect02"
             android:padding="10dp"
+            android:textColor="@color/colorBlack"
             android:text="Showing All Orders" />
 
         <!-- Filter orders -->

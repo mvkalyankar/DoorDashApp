@@ -79,6 +79,7 @@
                 android:drawableStart="@drawable/ic_person_gray"
                 android:drawablePadding="5dp"
                 android:hint="Full Name"
+                android:textColor="@color/colorBlack"
                 android:inputType="textCapWords|textPersonName"
                 android:padding="10dp" />
 
@@ -93,6 +94,7 @@
                 android:drawablePadding="5dp"
                 android:hint="Phone"
                 android:inputType="number"
+                android:textColor="@color/colorBlack"
                 android:padding="10dp" />
 
             <LinearLayout
@@ -114,6 +116,7 @@
                     android:drawableStart="@drawable/ic_location_gray"
                     android:drawablePadding="5dp"
                     android:hint="Country"
+                    android:textColor="@color/colorBlack"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -128,6 +131,7 @@
                     android:drawableStart="@drawable/ic_location_gray"
                     android:drawablePadding="5dp"
                     android:hint="State"
+                    android:textColor="@color/colorBlack"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -142,6 +146,7 @@
                     android:drawableStart="@drawable/ic_location_gray"
                     android:drawablePadding="5dp"
                     android:hint="City"
+                    android:textColor="@color/colorBlack"
                     android:inputType="textPostalAddress"
                     android:padding="10dp" />
 
@@ -157,6 +162,7 @@
                 android:drawableStart="@drawable/ic_location_gray"
                 android:drawablePadding="5dp"
                 android:hint="Complete address"
+                android:textColor="@color/colorBlack"
                 android:inputType="textEmailAddress|textMultiLine"
                 android:padding="10dp" />
 
@@ -170,6 +176,7 @@
                 android:drawableStart="@drawable/ic_mail_gray"
                 android:drawablePadding="5dp"
                 android:hint="Email"
+                android:textColor="@color/colorBlack"
                 android:inputType="textEmailAddress"
                 android:padding="10dp" />
 
@@ -183,6 +190,7 @@
                 android:drawableStart="@drawable/ic_lock_gray"
                 android:drawablePadding="5dp"
                 android:hint="Password"
+                android:textColor="@color/colorBlack"
                 android:inputType="textPassword"
                 android:padding="10dp" />
 
@@ -196,6 +204,7 @@
                 android:drawableStart="@drawable/ic_lock_gray"
                 android:drawablePadding="5dp"
                 android:hint="Confirm Password"
+                android:textColor="@color/colorBlack"
                 android:inputType="textPassword"
                 android:padding="10dp" />
 
@@ -218,6 +227,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/colorBlack"
                 android:text="Are you a Owner?Register as Owner" />
 
         </RelativeLayout>
