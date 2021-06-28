@@ -15,6 +15,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -363,8 +364,9 @@ public class ShopDetailsActivity extends AppCompatActivity {
 
                         if (which == 1) {
                             Toast.makeText(ShopDetailsActivity.this, "Currently Online Payment Is Not Available..Try Another Method", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(ShopDetailsActivity.this,ShopDetailsActivity.class));
-                            finish();
+                          //  startActivity(new Intent(ShopDetailsActivity.this,ShopDetailsActivity.class));
+                          //  finish();
+                         dialog.dismiss();
                         }
 
                     }

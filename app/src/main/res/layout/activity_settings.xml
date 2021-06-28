@@ -30,12 +30,11 @@
             android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>
-
+<!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Switch: enable/disable notification-->
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/fcmSwitch"
             android:layout_width="match_parent"
@@ -65,5 +64,16 @@
             android:background="@color/colorGray00" />
 
     </RelativeLayout>
+-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seek Help                                                   support@doordash.com"
+            android:padding="10dp"
+            android:textColor="@color/colorBlack"
+            android:id="@+id/helpTv"
+            />
+
+    
 
 </LinearLayout>

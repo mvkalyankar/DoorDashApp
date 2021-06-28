@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class SettingsActivity extends AppCompatActivity {
-
+/*
     private ImageButton backBtn;
     private TextView notificationStatusTv;
     private SwitchCompat fcmSwitch;
@@ -36,11 +36,13 @@ public class SettingsActivity extends AppCompatActivity {
 
     private boolean isChecked=false;
 
+ */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_settings);
-
+        setContentView(R.layout.activity_settings);
+/*
          backBtn = findViewById(R.id.backBtn);
         notificationStatusTv = findViewById(R.id.notificationStatusTv);
         fcmSwitch = findViewById(R.id.fcmSwitch);
@@ -131,5 +133,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
+ */
+    }
 
 }
