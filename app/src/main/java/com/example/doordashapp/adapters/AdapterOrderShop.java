@@ -70,7 +70,7 @@ public class AdapterOrderShop extends RecyclerView.Adapter<AdapterOrderShop.Hold
             holder.statusTv.setTextColor(context.getResources().getColor(R.color.colorPrimary));
         } else if (orderStatus.equals("Completed")) {
             holder.statusTv.setTextColor(context.getResources().getColor(R.color.colorGreen));
-        } else if (orderStatus.equals("Completed")) {
+        } else if (orderStatus.equals("Cancelled")) {
             holder.statusTv.setTextColor(context.getResources().getColor(R.color.colorRed));
         }
 

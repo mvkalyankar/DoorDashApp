@@ -152,7 +152,7 @@ public class OrderDetailsOwnerActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         // status updated
-                        String message ="Order is now" + selectedOption;
+                        String message ="Order is now " + selectedOption;
                         Toast.makeText(OrderDetailsOwnerActivity.this, message, Toast.LENGTH_SHORT).show();
 
                         prepareNotificationMessage(orderId,message);
@@ -237,7 +237,7 @@ public class OrderDetailsOwnerActivity extends AppCompatActivity {
                         // convert timestamp
                         Calendar calendar = Calendar.getInstance();
                         calendar.setTimeInMillis(Long.parseLong(orderTime));
-                        String dateFormatted = DateFormat.format("dd/MM/yyyy", calendar).toString();
+                        String dateFormatted = DateFormat.format("dd/MM/yyyy hh:mm a", calendar).toString();
 
                         // order details
                         if (orderStatus.equals("In Progress")) {

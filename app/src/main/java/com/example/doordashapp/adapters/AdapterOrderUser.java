@@ -73,7 +73,7 @@ public class AdapterOrderUser extends RecyclerView.Adapter<AdapterOrderUser.Hold
         //convert timestamp to proper format
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(orderTime));
-        String formatDate = DateFormat.format("dd/mm/yyyy", calendar).toString();
+        String formatDate = DateFormat.format("dd/MM/yyyy hh:mm a", calendar).toString();
         holder.dateTv.setText(formatDate);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

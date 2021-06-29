@@ -628,7 +628,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
                 intent.putExtra("orderTo", shopUid);
                 intent.putExtra("orderId", orderId);
                 startActivity(intent);
-                Toast.makeText(ShopDetailsActivity.this, "Send notification error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShopDetailsActivity.this, "Send notification error ", Toast.LENGTH_SHORT).show();
 
             }
         }){
