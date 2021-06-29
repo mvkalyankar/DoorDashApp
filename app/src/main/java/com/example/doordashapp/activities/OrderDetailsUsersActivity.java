@@ -43,13 +43,13 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
 
     private String orderTo, orderId;
     private String cost;
-    private Timer timer;
+
 
     // UI views
     private ImageButton backBtn, writeReviewBtn;
     private TextView orderIdTv, dateTv, orderStatusTv, shopNameTv, totalItemsTv, amountTv, addressTv;
     private RecyclerView itemsRv;
-    private Button paymentBtn;
+
 
     private FirebaseAuth firebaseAuth;
 
@@ -168,7 +168,10 @@ public class OrderDetailsUsersActivity extends AppCompatActivity {
                         // convert timestamp to proper format
                         Calendar calendar = Calendar.getInstance();
                         calendar.setTimeInMillis(Long.parseLong(orderTime));
-                        String formattedDate = DateFormat.format("dd/mm/yyyy hh:mm a", calendar).toString();    // e.g. 07/06/2021 09:31 Pm
+                        String formattedDate = DateFormat.format("dd/MM/yyyy hh:mm a", calendar).toString();    // e.g. 07/06/2021 09:31 Pm
+
+
+
 
                         if (orderStatus.equals("In Progress")) {
                             orderStatusTv.setTextColor(getResources().getColor(R.color.colorPrimary));

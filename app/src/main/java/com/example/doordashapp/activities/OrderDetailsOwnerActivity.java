@@ -153,7 +153,8 @@ public class OrderDetailsOwnerActivity extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         // status updated
                         String message ="Order is now" + selectedOption;
-                        Toast.makeText(OrderDetailsOwnerActivity.this, "Order is now" + selectedOption, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(OrderDetailsOwnerActivity.this, message, Toast.LENGTH_SHORT).show();
+
                         prepareNotificationMessage(orderId,message);
                     }
                 })
@@ -318,7 +319,7 @@ public class OrderDetailsOwnerActivity extends AppCompatActivity {
     }
 
     private void prepareNotificationMessage(String orderId,String message){
-        //when user owner changes order status InProgress/Completed/Cancelled,send notification to owner
+        //when user owner changes order status InProgress/Completed/Cancelled,send notification to customer
 
         //prepare data for notifications
         String NOTIFICATION_TOPIC = "/topics/"+ Constants.FCM_TOPIC;

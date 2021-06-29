@@ -200,6 +200,7 @@
                     android:text="Delivery Address "
                     android:textColor="@color/colorBlack"
                     android:textSize="20sp"
+
                     android:textStyle="bold" />
 
                 <TextView
@@ -209,6 +210,30 @@
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:text="ABC city"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorBlack" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Delivery Time "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:text="30:00 min"
                     android:textColor="@color/colorBlack" />
 
             </TableRow>

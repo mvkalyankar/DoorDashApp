@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,9 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class SettingsActivity extends AppCompatActivity {
-/*
+
     private ImageButton backBtn;
-    private TextView notificationStatusTv;
+   private TextView notificationStatusTv;
     private SwitchCompat fcmSwitch;
     private FirebaseAuth firebaseAuth;
 
@@ -36,13 +37,13 @@ public class SettingsActivity extends AppCompatActivity {
 
     private boolean isChecked=false;
 
- */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-/*
+
          backBtn = findViewById(R.id.backBtn);
         notificationStatusTv = findViewById(R.id.notificationStatusTv);
         fcmSwitch = findViewById(R.id.fcmSwitch);
@@ -66,9 +67,10 @@ public class SettingsActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        fcmSwitch.setOnClickListener(new View.OnClickListener() {
+
+        fcmSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked){
                     //checked,enable
                     subscribeToTopic();
@@ -93,11 +95,11 @@ public class SettingsActivity extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         //subscribed successfully
                         spEditor = sp.edit();
-                        spEditor.putBoolean("FCM_ENABLED",false);
+                        spEditor.putBoolean("FCM_ENABLED",true);
                         spEditor.apply();
 
-                        Toast.makeText(SettingsActivity.this, ""+disabledMessage, Toast.LENGTH_SHORT).show();
-                        notificationStatusTv.setText(disabledMessage);
+                        Toast.makeText(SettingsActivity.this, ""+enabledMessage, Toast.LENGTH_SHORT).show();
+                        notificationStatusTv.setText(enabledMessage);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -116,11 +118,11 @@ public class SettingsActivity extends AppCompatActivity {
                         //unsubscribed successfully
                         //save setting ins shared preference
                         spEditor = sp.edit();
-                        spEditor.putBoolean("FCM_ENABLED",true);
+                        spEditor.putBoolean("FCM_ENABLED",false);
                         spEditor.apply();
 
-                        Toast.makeText(SettingsActivity.this, ""+enabledMessage, Toast.LENGTH_SHORT).show();
-                        notificationStatusTv.setText(enabledMessage);
+                        Toast.makeText(SettingsActivity.this, ""+disabledMessage, Toast.LENGTH_SHORT).show();
+                        notificationStatusTv.setText(disabledMessage);
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -133,7 +135,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
- */
+
     }
 
-}
+

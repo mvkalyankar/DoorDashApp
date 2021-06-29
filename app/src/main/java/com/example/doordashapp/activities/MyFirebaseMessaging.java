@@ -17,8 +17,6 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.example.doordashapp.R;
-import com.example.doordashapp.activities.OrderDetailsOwnerActivity;
-import com.example.doordashapp.activities.OrderDetailsUsersActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -27,6 +25,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import java.util.Random;
 
 public class MyFirebaseMessaging extends FirebaseMessagingService {
+
     private static final String NOTIFICATION_CHANNEL_ID = "MY_NOTIFICATION_CHANNEL_ID";//required for android 0 and above
 
     private FirebaseAuth firebaseAuth;
@@ -43,6 +42,7 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
 
         //get data from notification
         String notificationType = remoteMessage.getData().get("notificationType");
+
         if (notificationType.equals("NewOrder")) {
             String customerUid = remoteMessage.getData().get("customerUid");
             String ownerUid = remoteMessage.getData().get("ownerUid");
@@ -73,6 +73,7 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
     private void showNotification(String orderId, String ownerUid, String customerUid, String notificationTitle,
                                   String notificationMessage, String notificationType) {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
         //id for notification,random
         int notificationID = new Random().nextInt(3000);
 
@@ -101,6 +102,7 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
         }
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+
         //large icon
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.icon);
 
@@ -112,14 +114,14 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
                 .setContentTitle(notificationTitle)
                 .setContentText(notificationMessage)
                 .setSound(notificationSoundUri)
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent);
+                .setAutoCancel(true)//cancel/dismiss when clicked
+                .setContentIntent(pendingIntent);// add intent
+
         //show notification
         notificationManager.notify(notificationID, notificationBuilder.build());
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-
     private void setupNotificationChannel(NotificationManager notificationManager) {
         CharSequence channelName = "Some Sample Text";
         String channelDescription = "Channel Description here";

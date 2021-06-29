@@ -30,7 +30,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>
-<!--
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -64,7 +64,7 @@
             android:background="@color/colorGray00" />
 
     </RelativeLayout>
--->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
